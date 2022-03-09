@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
-import React from 'react'
+import React, {useRef} from 'react'
 import { Divider } from 'react-native-elements'
 import { useNavigation } from '@react-navigation/native'
 import FormLogin from '../components/acount/FormLogin'
+import Toast from 'react-native-easy-toast'
 
 export default function Login() {
+    const toastRef = useRef();
     return (
         <ScrollView>
             <Image style={styles.logo} resizeMode="contain"
@@ -13,12 +15,13 @@ export default function Login() {
         source={{}}/>. */}
             <View style={styles.viewContainer}>
                 <Text>Formulario LOGIN</Text>
-                <FormLogin/>
+                <FormLogin toastRef={toastRef}/>
                 <CrearCuenta/>
                 <Text>Registrarse</Text>
             </View>
             <Divider style={styles.divider} />
             <Text>Redes sociales</Text>
+            <Toast ref={toastRef} opacity={0.9} position={"center"}/>
         </ScrollView>
     )
 }
@@ -40,7 +43,8 @@ const styles = StyleSheet.create({
     logo: {
         height: 100,
         width: 200,
-        alignSelf: "center"
+        alignSelf: "center",
+        marginTop:50
     },
     viewContainer:{
         marginLeft:40,

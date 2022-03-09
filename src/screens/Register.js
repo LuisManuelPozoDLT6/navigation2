@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
   logo: {
     height: 100,
     width: 200,
-    alignSelf: "center"
+    alignSelf: "center",
+    marginTop:30
   }
 })
