@@ -31,7 +31,10 @@ export default function Profile() {
         toastRef={toastRef}
         setLoading={setLoading}
         setLoadingText={setLoadingText}/>}
-      <UserOptions/>
+      <UserOptions
+      userInfo={userInfo}
+      toastRef={toastRef}
+      />
       <Button
         title={"Cerrar sesión"}
         buttonStyle={styles.btnCloseSesion}
