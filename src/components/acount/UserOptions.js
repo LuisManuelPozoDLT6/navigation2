@@ -8,7 +8,7 @@ import UserInfo from './UserInfo';
 
 
 export default function UserOptions(props) {
-  const {userInfo, toastRef}=props;
+  const {userInfo, toastRef, setReloadUserInfo}=props;
   const [showModal, setShowModal] = useState(false);
   const [renderComponent, setRenderComponent] = useState(null)
 
@@ -19,6 +19,7 @@ export default function UserOptions(props) {
         displayName={userInfo.displayName}
         setShowModal={setShowModal}
         toastRef={toastRef}
+        setReloadUserInfo={setReloadUserInfo}
         />)
         setShowModal(true)
         break;

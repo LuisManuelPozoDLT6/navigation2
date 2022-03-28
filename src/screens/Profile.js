@@ -14,6 +14,7 @@ export default function Profile() {
   const [userInfo, setUserInfo] = useState(null)
   const [loading, setLoading] = useState(false)
   const [loadingText, setLoadingText] = useState(null)
+  const [reloadUserInfo, setReloadUserInfo] = useState(false)
 
   useEffect(() => {
     (async() =>{
@@ -21,8 +22,9 @@ export default function Profile() {
       setUserInfo(user);
       // console.log(userInfo);
     })();
-    
-  }, [])
+    setReloadUserInfo(false)
+  }, 
+  [reloadUserInfo])
   
   return (
     <View style={styles.userInfo}>
@@ -34,6 +36,7 @@ export default function Profile() {
       <UserOptions
       userInfo={userInfo}
       toastRef={toastRef}
+      setReloadUserInfo={setReloadUserInfo}
       />
       <Button
         title={"Cerrar sesión"}
@@ -69,4 +72,3 @@ const styles = StyleSheet.create({
     color:"#fff"    
   }
 })
-
