@@ -43,7 +43,7 @@ export default function Profile() {
         buttonStyle={styles.btnCloseSesion}
         titleStyle={styles.btnTitle}
         onPress={() => {firebase.auth().signOut();
-        navigation.navigate("index");
+        navigation.navigate("Index");
       }}
       />
       <Toast ref={toastRef} position="center" opacity={0.9}/>
